@@ -32,7 +32,7 @@ DDNSTO官方网站：https://www.ddnsto.com/
 关于单网口路由器修改网口定义教程：
 
 op启动跑完码后按回车进入shell，输入vi /etc/config/network后回车，按i进入编辑模式。找到第config interface 'lan'（如果没有的话自己添加），把里面的内容修改为：
-
+```
 config interface 'lan'
         option type 'bridge'
         option proto 'static'
@@ -41,6 +41,7 @@ config interface 'lan'
         option multipath 'off'
         option ifname 'eth1'
         option delegate '0'
+````
 把config interface 'wan’和里面的内容删掉，按:wq存并退出，不保存退出是:q!,之后重启路由器就可以访问luci界面了。
 
 下载地址：
